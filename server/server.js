@@ -3,9 +3,7 @@ require("dotenv").config();
 
 const express = require("express");
 const cors = require("cors");
-
 const connectDB = require("./config/db");
-
 const app = express();
 
 // Connect to MongoDB
@@ -31,10 +29,10 @@ app.use(
     credentials: true,
   })
 );
-app.use('/api/payment',  require('./routes/paymentRoutes'));
-app.use(express.json());
 
+app.use(express.json());
 // API Routes
+app.use('/api/payment',  require('./routes/paymentRoutes'));
 app.use("/api/auth", require("./routes/authRoutes"));
 app.use("/api/products", require("./routes/productRoutes"));
 
@@ -70,6 +68,16 @@ app.use((err, req, res, next) => {
 
 // Start server
 const PORT = process.env.PORT || 5000;
+
+const path = require('path');
+if (process.env.NODE_ENV === 'production') {
+  // Serve static files from the React frontend build
+  app.use(express.static(path.join(__dirname, '../client/build')));
+  
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '../', 'client', 'build', 'index.html'));
+  });  
+}
 
 app.listen(PORT, () => {
   console.log(

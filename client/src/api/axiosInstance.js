@@ -5,7 +5,7 @@ import axios from "axios";
 
 // Create Axios instance
 const axiosInstance = axios.create({
-  baseURL: process.env.REACT_APP_API_URL,
+  baseURL: process.env.REACT_APP_API_URL || 'api', // Default to 'api' for relative calls in production
   headers: {
     "Content-Type": "application/json",
   },
