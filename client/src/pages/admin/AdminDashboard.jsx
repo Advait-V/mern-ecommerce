@@ -8,7 +8,7 @@ import { Link }                        from 'react-router-dom';
 import { fetchAllOrders }              from '../../api/orderApi';
 import { fetchProducts }               from '../../api/productApi';
 import AdminLayout                     from '../../components/AdminLayout';
-import Spinner                         from '../../components/Spinner';
+import Spinner                         from '../../components/ui/Spinner';
 import { formatCurrency }              from '../../utils/formatCurrency';
 
 // Status badge styles (same as other pages)

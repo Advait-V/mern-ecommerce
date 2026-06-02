@@ -9,9 +9,9 @@ import { fetchProductById }             from '../api/productApi';
 import { addProductReview }             from '../api/productApi';
 import { useCart }                      from '../context/CartContext';
 import { useAuth }                      from '../context/AuthContext';
-import StarRating                       from '../components/StarRating';
-import Spinner                          from '../components/Spinner';
-import Message                          from '../components/Message';
+import StarRating                       from '../components/features/StarRating';
+import Spinner                          from '../components/ui/Spinner';
+import Message                          from '../components/ui/Message';
 import { formatCurrency }               from '../utils/formatCurrency';
 import useTitle                         from '../hooks/useTitle';
 

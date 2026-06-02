@@ -26,8 +26,8 @@ import {
 }                                          from '@stripe/react-stripe-js';
 import { createPaymentIntent }             from '../api/paymentApi';
 import { payOrder, fetchOrderById }        from '../api/orderApi';
-import Spinner                             from '../components/Spinner';
-import Message                             from '../components/Message';
+import Spinner                             from '../components/ui/Spinner';
+import Message                             from '../components/ui/Message';
 import { formatCurrency }                  from '../utils/formatCurrency';
 import useTitle                            from '../hooks/useTitle';
 
