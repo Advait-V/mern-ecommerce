@@ -1,37 +1,8 @@
 // controllers/productController.js
 
-const Product = require('../models/product');
+console.log("✅ productController loaded");
 
-const buildSearchCondition = (keyword) => {
-  // Escape special regex characters to prevent regex injection attacks
-  // If user types "laptop+" the + would break the regex without escaping
-  const escaped = keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-
-  return {
-    $or: [
-      // Option 1: MongoDB full-text search
-      // Fast because it uses a pre-built text index
-      // Best for full word matches: "laptop" finds "laptop"
-      { $text: { $search: keyword } },
-
-      // Option 2: Partial match on product name
-      // Catches partial words: "iphon" finds "iPhone"
-      { name: { $regex: escaped, $options: 'i' } },
-
-      // Option 3: Partial match on category
-      // "electro" finds "Electronics"
-      { category: { $regex: escaped, $options: 'i' } },
-
-      // Option 4: Partial match on brand
-      // "sams" finds "Samsung"
-      { brand: { $regex: escaped, $options: 'i' } },
-
-      // Option 5: Partial match on description
-      // "noise cancel" finds products describing noise cancellation
-      { description: { $regex: escaped, $options: 'i' } },
-    ],
-  };
-};
+const Product = require("../models/product");
 
 // ─── @route   GET /api/products ───────────────────────────────────────────────
 // @desc    Get all products with fuzzy search, filter, sort & pagination
