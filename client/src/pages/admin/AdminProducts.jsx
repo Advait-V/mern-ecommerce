@@ -15,8 +15,8 @@ import {
   updateProduct, deleteProduct,
 }                                       from '../../api/productApi';
 import AdminLayout                     from '../../components/AdminLayout';
-import Spinner                         from '../../components/ui/Spinner';
-import Message                         from '../../components/ui/Message';
+import Spinner                         from '../../components/Spinner';
+import Message                         from '../../components/Message';
 import { formatCurrency }              from '../../utils/formatCurrency';
 import { toast }                       from 'react-toastify';
 

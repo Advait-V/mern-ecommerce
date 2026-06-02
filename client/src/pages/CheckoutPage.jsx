@@ -13,7 +13,7 @@ import { useCart }            from '../context/CartContext';
 import { useAuth }            from '../context/AuthContext';
 import { formatCurrency }     from '../utils/formatCurrency';
 import useTitle               from '../hooks/useTitle';
-import Message                from '../components/ui/Message';
+import Message                from '../components/Message';
 
 // ── Initial address state ─────────────────────────────────────────────────────
 // Pre-fill with empty strings — each field maps to the shippingAddress schema

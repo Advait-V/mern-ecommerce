@@ -5,8 +5,8 @@
 import { useState, useEffect }    from 'react';
 import { Link }                   from 'react-router-dom';
 import { fetchMyOrders }          from '../api/orderApi';
-import Spinner                    from '../components/ui/Spinner';
-import Message                    from '../components/ui/Message';
+import Spinner                    from '../components/Spinner';
+import Message                    from '../components/Message';
 import { formatCurrency }         from '../utils/formatCurrency';
 import useTitle                   from '../hooks/useTitle';
 

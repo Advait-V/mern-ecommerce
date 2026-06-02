@@ -11,7 +11,7 @@
 
 import { Link, useNavigate }  from 'react-router-dom';
 import { useCart }             from '../context/CartContext';
-import Spinner                 from '../components/ui/Spinner';
+import Spinner                 from '../components/Spinner';
 import { formatCurrency }      from '../utils/formatCurrency';
 import useTitle                from '../hooks/useTitle';
 

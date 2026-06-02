@@ -13,9 +13,9 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useSearchParams, Link }             from 'react-router-dom';
 import { fetchProducts, fetchCategories }    from '../api/productApi';
-import ProductCard from '../components/features/ProductCard';
-import Spinner     from '../components/ui/Spinner';
-import Message     from '../components/ui/Message';
+import ProductCard from '../components/ProductCard';
+import Spinner     from '../components/Spinner';
+import Message     from '../components/Message';
 import useTitle    from '../hooks/useTitle';
 
 const ProductsPage = () => {

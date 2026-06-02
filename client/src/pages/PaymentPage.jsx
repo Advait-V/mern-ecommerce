@@ -1,20 +1,4 @@
 // src/pages/PaymentPage.jsx
-//
-// This page is shown when a user chose "Stripe" at checkout
-// and needs to complete the payment for an existing order.
-//
-// Flow:
-//   1. Page loads → fetches order → calls createPaymentIntent
-//   2. Stripe Elements renders a secure card input form
-//   3. User enters card → clicks Pay → stripe.confirmPayment()
-//   4. On success → call PUT /orders/:id/pay → redirect to order detail
-//
-// @stripe/react-stripe-js provides:
-//   <Elements>          — context provider (like React Context)
-//   <PaymentElement>    — Stripe's hosted card UI (PCI compliant)
-//   useStripe()         — access the stripe instance
-//   useElements()       — access the Elements instance
-
 import { useState, useEffect }             from 'react';
 import { useParams, useNavigate }          from 'react-router-dom';
 import { loadStripe }                      from '@stripe/stripe-js';
@@ -26,8 +10,8 @@ import {
 }                                          from '@stripe/react-stripe-js';
 import { createPaymentIntent }             from '../api/paymentApi';
 import { payOrder, fetchOrderById }        from '../api/orderApi';
-import Spinner                             from '../components/ui/Spinner';
-import Message                             from '../components/ui/Message';
+import Spinner                             from '../components/Spinner';
+import Message                             from '../components/Message';
 import { formatCurrency }                  from '../utils/formatCurrency';
 import useTitle                            from '../hooks/useTitle';
 
