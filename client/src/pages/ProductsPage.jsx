@@ -11,10 +11,10 @@
 // Every filter change → update URL → useEffect re-fetches products
 
 import { useState, useEffect, useCallback } from 'react';
-import { useSearchParams, Link }             from 'react-router-dom';
+import { useSearchParams }             from 'react-router-dom';
 import { fetchProducts, fetchCategories }    from '../api/productApi';
 import ProductCard from '../components/ProductCard';
-import Spinner     from '../components/Spinner';
+//import Spinner     from '../components/Spinner';
 import Message     from '../components/Message';
 import useTitle    from '../hooks/useTitle';
 
